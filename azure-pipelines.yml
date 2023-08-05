@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  
+
 steps:
 - task: TerraformInstaller@0
   inputs:
@@ -39,9 +39,9 @@ steps:
     allowTelemetryCollection: true
   
 - task: TerraformCLI@0
-    inputs:
-      command: 'output'
-      allowTelemetryCollection: true
+  inputs:
+    command: 'output'
+    allowTelemetryCollection: true
 
 - bash: |
         echo ' $(TF_OUT_AZURE_CONTAINER_REGISTRY_ADMIN_PASSWORD)'
