@@ -3,11 +3,11 @@ variable "registry_name" {
 }
 
 variable "app_service_plan_name" {
-  default = "microservice"
+  default = "dockerdotnetappservice"
 }
 
 variable "app_service_name" {
-  default = "microservice"
+  default = "dockerdotnetapp"
 }
 
 variable "app_service_plan_os" {
@@ -23,7 +23,7 @@ variable "region" {
 }
 
 variable "resource_group_name" {
-    default = "microservice"   
+    default = "dockerdotnet"   
 }
 
 variable "sku" {
@@ -31,7 +31,7 @@ variable "sku" {
 }
 
 variable "cosmos_db_name" {
-    default = "microservice"   
+    default = "dockerdotnetdb"   
 }
 
 variable "max_throughput" {
