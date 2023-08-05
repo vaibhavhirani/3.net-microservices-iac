@@ -21,9 +21,23 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: 'latest'
+# - task: TerraformCLI@0
+#   inputs:
+#     command: 'init'
+#     allowTelemetryCollection: true
+    
 - task: TerraformCLI@0
   inputs:
     command: 'init'
+    backendType: 'azurerm'
+    backendServiceArm: 'Azure for Students(d76415fd-d1f3-4359-8d5e-6121b38f3ad8)'
+    backendAzureRmSubscriptionId: 'd76415fd-d1f3-4359-8d5e-6121b38f3ad8'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'terraform-backend'
+    backendAzureRmResourceGroupLocation: 'centralindia'
+    backendAzureRmStorageAccountName: 'terraform-backend-sa'
+    backendAzureRmContainerName: 'terraform-backend-container'
+    backendAzureRmKey: 'global/tfstate'
     allowTelemetryCollection: true
 - task: TerraformCLI@0
   inputs:
