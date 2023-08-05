@@ -35,7 +35,7 @@ steps:
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend'
     backendAzureRmResourceGroupLocation: 'centralindia'
-    backendAzureRmStorageAccountName: 'terraform-backend-sa'
+    backendAzureRmStorageAccountName: 'terraformbackenddotnet'
     backendAzureRmContainerName: 'terraform-backend-container'
     backendAzureRmKey: 'global/tfstate'
     allowTelemetryCollection: true
