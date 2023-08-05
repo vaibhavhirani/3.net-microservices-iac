@@ -21,11 +21,11 @@ steps:
     backendServiceArm: 'Azure for Students(d76415fd-d1f3-4359-8d5e-6121b38f3ad8)'
     backendAzureRmSubscriptionId: 'd76415fd-d1f3-4359-8d5e-6121b38f3ad8'
     ensureBackend: true
-    backendAzureRmResourceGroupName: 'terraform-backend'
+    backendAzureRmResourceGroupName: 'tfstate'
     backendAzureRmResourceGroupLocation: 'centralindia'
     backendAzureRmStorageAccountName: 'terraformbackenddotnet'
     backendAzureRmContainerName: 'terraform-backend-container'
-    backendAzureRmKey: 'global/tfstate'
+    backendAzureRmKey: 'terraform.tfstate'
     allowTelemetryCollection: true
 
 - task: TerraformCLI@0
