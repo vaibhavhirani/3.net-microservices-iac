@@ -10,22 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: 'latest'
-# - task: TerraformCLI@0
-#   inputs:
-#     command: 'init'
-#     allowTelemetryCollection: true
-    
+
 - task: TerraformCLI@0
   inputs:
     command: 'init'
@@ -39,6 +27,7 @@ steps:
     backendAzureRmContainerName: 'terraform-backend-container'
     backendAzureRmKey: 'global/tfstate'
     allowTelemetryCollection: true
+
 - task: TerraformCLI@0
   inputs:
     command: 'plan'
