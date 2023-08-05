@@ -1,5 +1,5 @@
 variable "registry_name" {
-  default = "docker-registry-3net"
+  default = "dockerregistrydotnet"
 }
 
 variable "app_service_plan_name" {
