@@ -1,8 +1,8 @@
 # 3.net-microservices-iac
 Infrastructure as Code for 3.net-microservices
 
-
-# Brief Terraform Module - azure-app-service-docker
+# Terraform Module - azure-app-service-docker
+## Brief 
 - Module provisions resources that are required to run - Dockerized .NET application on linux.
 - Module creates following resources
     - Azure Resource Group
@@ -11,7 +11,7 @@ Infrastructure as Code for 3.net-microservices
     - Azure App Service Slot (Azure Web App Slot for Linux)
     - Azure Container Registry
 
-# Usage
+## Usage
 - `main.tf` uses module at `modules/azure-app-service-docker`. 
 - Module takes few parameters which can be found here `modules/azure-app-service-docker/variables.tf` and gives output when all the terraform scripts are applied as shown in `modules/azure-app-service-docker/output.tf`
 -  Snippet for consumption
