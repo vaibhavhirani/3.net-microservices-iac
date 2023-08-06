@@ -1,3 +1,4 @@
+# Below variables are outputed on stdout. Useful when used in Azure DevOps as these are usable as bash vars.
 output "azure_container_registry" {
     value = azurerm_container_registry.acr.login_server
     # sensitive = true

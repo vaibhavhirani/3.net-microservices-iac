@@ -1,3 +1,4 @@
+# Input Parameters/Variable used output module and inside module
 variable "registry_name" {
   default = "dockerregistrydotnet"
 }
