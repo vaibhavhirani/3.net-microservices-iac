@@ -10,11 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: TerraformInstaller@0
+- task: TerraformInstaller@0'
+  displayName: "Terraform Installation"
   inputs:
     terraformVersion: 'latest'
 
 - task: TerraformCLI@0
+  displayName: "Terraform Init - Azure Backend"
   inputs:
     command: 'init'
     backendType: 'azurerm'
@@ -23,6 +25,7 @@ steps:
     allowTelemetryCollection: true
 
 - task: TerraformCLI@0
+  displayName: "Terraform Plan - Plan of Action"
   inputs:
     command: 'plan'
     environmentServiceName: 'Azure for Students(d76415fd-d1f3-4359-8d5e-6121b38f3ad8)'
@@ -31,6 +34,7 @@ steps:
     allowTelemetryCollection: true
 
 - task: TerraformCLI@0
+  displayName: "Terraform Apply - Deployment of Infrastructure"
   inputs:
     command: 'apply'
     environmentServiceName: 'Azure for Students(d76415fd-d1f3-4359-8d5e-6121b38f3ad8)'
