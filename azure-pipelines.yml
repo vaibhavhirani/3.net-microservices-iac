@@ -10,11 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+# terraform installtion
 - task: TerraformInstaller@0'
   displayName: "Terraform Installation"
   inputs:
     terraformVersion: 'latest'
 
+# terraform init using azure backend, this makes sure that we always deploy desired state
 - task: TerraformCLI@0
   displayName: "Terraform Init - Azure Backend"
   inputs:
@@ -24,6 +26,7 @@ steps:
     backendAzureRmSubscriptionId: 'd76415fd-d1f3-4359-8d5e-6121b38f3ad8'
     allowTelemetryCollection: true
 
+# terraform plan to show blueprint of the deployment
 - task: TerraformCLI@0
   displayName: "Terraform Plan - Plan of Action"
   inputs:
@@ -33,6 +36,11 @@ steps:
     runAzLogin: true
     allowTelemetryCollection: true
 
+
+# terraform validate could be added here.
+
+
+# terraform apply to provision infrastructure
 - task: TerraformCLI@0
   displayName: "Terraform Apply - Deployment of Infrastructure"
   inputs:
