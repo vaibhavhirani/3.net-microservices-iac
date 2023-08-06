@@ -42,20 +42,20 @@ resource "azurerm_storage_container" "tfstate" {
   container_access_type = "private"
 }
 
-module "my_eks_module" {
+module "my_az_module" {
   source = "./modules/azure-app-service-docker"  
 }
 
 output "azure_container_registry" {
-    value = module.my_eks_module.azure_container_registry
+    value = module.my_az_module.azure_container_registry
     # sensitive = true
 }
 output "azure_container_registry_admin_username" {
-    value = module.my_eks_module.azure_container_registry_admin_username
+    value = module.my_az_module.azure_container_registry_admin_username
     sensitive = true
 }
 output "azure_container_registry_admin_password" {
-    value = module.my_eks_module.azure_container_registry_admin_password
+    value = module.my_az_module.azure_container_registry_admin_password
     sensitive = true
 }
 
