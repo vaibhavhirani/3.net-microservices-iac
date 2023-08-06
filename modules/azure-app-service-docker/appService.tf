@@ -16,7 +16,11 @@ resource "azurerm_linux_web_app" "webapp" {
   service_plan_id       = azurerm_service_plan.app_service_plan.id
   https_only            = true
   site_config { 
-    minimum_tls_version = "1.2"
+       always_on        = true
+  application_stack {
+    docker_image_name = "nginx:latest"
+    docker_registry_url = "https://registry.hub.docker.com/v2/"
+  }
   }
   
 }
@@ -24,5 +28,11 @@ resource "azurerm_linux_web_app" "webapp" {
 resource "azurerm_linux_web_app_slot" "staging_slot" {
   name           = "staging"
   app_service_id = azurerm_linux_web_app.webapp.id
-  site_config {}
+  site_config { 
+       always_on        = true
+  application_stack {
+    docker_image_name = "nginx:latest"
+    docker_registry_url = "https://registry.hub.docker.com/v2/"
+  }
+  }
 }
